@@ -4,7 +4,7 @@
     <string name="title">Titulo</string>
     <string name="source">Fonte</string>
     <string name="published_at">Publicado em:</string>
-    <string name="favorite">Favoritos</string>
+    <string name="favorite_menu">Favoritos</string>
     <string name="search_menu">Pesquisar…</string>
     <string name="search_query_hint">Pesquise noticias pelo mundo…</string>
     <string name="article_saved_successful">Artigo salvo com sucesso!</string>
