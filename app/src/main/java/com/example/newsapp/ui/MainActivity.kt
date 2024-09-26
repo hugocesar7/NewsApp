@@ -1,5 +1,8 @@
 package com.example.newsapp.ui
 
+import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -59,5 +62,28 @@ class MainActivity : AbstractActivity(), ViewHome.View {
     override fun showArticles(articles: List<Article>) {
         mainAdapter.differ.submitList(articles.toList())
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_item, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.search_menu -> {
+                Intent(this, SearchActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
+            R.id.favorite_menu -> {
+                Intent(this, FavoriteActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
