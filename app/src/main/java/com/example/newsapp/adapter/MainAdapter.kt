@@ -40,8 +40,10 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.AricleViewHolder>() {
 
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(findViewById(R.id.ivArticleImage))
-            findViewById<TextView>(R.id.tvArticleTitle).text = article.source?.name
-            findViewById<TextView>(R.id.tvArticleSource).text = article.author ?: article.source?.name
+            findViewById<TextView>(R.id.tvArticleTitle).text =
+                article.author ?: article.source?.name
+            findViewById<TextView>(R.id.tvArticleSource).text =
+                article.source?.name ?: article.author
             findViewById<TextView>(R.id.tvArticleDescription).text = article.description
             findViewById<TextView>(R.id.tvArticlePubkishedAt).text = article.publishedAt
 
