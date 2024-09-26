@@ -9,6 +9,5 @@ interface ViewHome {
         fun showFailure(message: String)
         fun hideProgressBar()
         fun showArticles(articles: List<Article>)
-        fun showMessage(message: String)
     }
 }

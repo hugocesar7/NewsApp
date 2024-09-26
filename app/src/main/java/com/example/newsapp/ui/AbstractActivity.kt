@@ -8,6 +8,7 @@ abstract class AbstractActivity: AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var a = getLayout()
         setContentView(getLayout())
         onInject()
     }

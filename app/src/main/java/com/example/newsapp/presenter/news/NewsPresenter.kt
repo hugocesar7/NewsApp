@@ -5,19 +5,21 @@ import com.example.newsapp.model.NewsResponse
 import com.example.newsapp.model.data.NewsDataSource
 import com.example.newsapp.presenter.ViewHome
 
-class NewsPresenter(val view: ViewHome.View,
-                    private val dataSource: NewsDataSource
+class NewsPresenter(
+    val view: ViewHome.View,
+    private val dataSource: NewsDataSource
 ) : NewsHome.Presenter {
     override fun requestAll() {
-//        this.dataSource.getEverything(this)
+        this.view.showProgressBar()
+        this.dataSource.getBreakingNews(this)
     }
 
     override fun onSuccess(newResponse: NewsResponse) {
-//        this.view.showArticles(news)
+        this.view.showArticles(newResponse.articles)
     }
 
     override fun onError(message: String) {
-        this.view.showMessage(message)
+        this.view.showFailure(message)
     }
 
     override fun onCompleted() {
