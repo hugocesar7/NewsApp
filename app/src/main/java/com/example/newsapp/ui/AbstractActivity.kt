@@ -1,6 +1,7 @@
 package com.example.newsapp.ui
 
 import android.os.Bundle
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class AbstractActivity: AppCompatActivity(){
@@ -11,6 +12,7 @@ abstract class AbstractActivity: AppCompatActivity(){
         onInject()
     }
 
+    @LayoutRes
     protected abstract fun getLayout(): Int
 
     protected abstract fun onInject()
